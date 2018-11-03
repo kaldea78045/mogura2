@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class GameStateManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -11,16 +11,6 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        //マウスをクリックしたところにハンマー移動
-        if (Input.GetMouseButton(0))
-        {
-
-
-        }
-
+		
 	}
-
-
-
 }
