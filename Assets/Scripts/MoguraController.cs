@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class MoguraController : MonoBehaviour {
 
-    private Vector3 moguraPos; 
+    private Vector3 moguraPos;
+    private bool bHit;          //もぐらが叩かれた
+    private bool bAppear;       //もぐらが現れてる
 	// Use this for initialization
 	void Start () {
 		
