@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoguraController : MonoBehaviour {
 
+    private Vector3 moguraPos; 
 	// Use this for initialization
 	void Start () {
 		
@@ -13,4 +14,19 @@ public class MoguraController : MonoBehaviour {
 	void Update () {
 		
 	}
+
+
+    private void MoguraUp()
+    {
+
+
+    }
+
+    private void MoguraDown()
+    {
+
+    }
+
+
+
 }
