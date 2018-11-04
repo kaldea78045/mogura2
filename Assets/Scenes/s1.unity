@@ -346,8 +346,8 @@ Transform:
   m_Father: {fileID: 1472734663}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1330378965
-CapsuleCollider:
+--- !u!65 &1330378965
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -355,10 +355,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2.7
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 2, z: 0.9}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1330378966
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -508,7 +507,6 @@ GameObject:
   - component: {fileID: 1472734663}
   - component: {fileID: 1472734662}
   - component: {fileID: 1472734661}
-  - component: {fileID: 1472734660}
   - component: {fileID: 1472734664}
   - component: {fileID: 1472734665}
   m_Layer: 0
@@ -518,19 +516,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &1472734660
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1472734659}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1472734661
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -579,14 +564,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1472734659}
-  m_LocalRotation: {x: 0.17744257, y: 0.6389617, z: 0.20141514, w: 0.72088426}
+  m_LocalRotation: {x: 0, y: 0.66314274, z: 0, w: 0.74849296}
   m_LocalPosition: {x: 1.76, y: 0.838, z: 0.567}
   m_LocalScale: {x: 0.0378315, y: 0.10809, z: 0.0378315}
   m_Children:
   - {fileID: 1330378964}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: -0.089, y: 83.08, z: 31.141}
+  m_LocalEulerAnglesHint: {x: 0, y: 83.08, z: 0}
 --- !u!95 &1472734664
 Animator:
   serializedVersion: 3

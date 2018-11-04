@@ -7,11 +7,15 @@ public class MoguraController : MonoBehaviour {
     private Vector3 vPos;       //もぐらの位置情報
     private bool    bHit;          //もぐらが叩かれた
     private bool    bAppear;       //もぐらが現れてる
-    private float   fMoveTime;
+    private float   fMoveTime;     //
+    private float fRandomTime;     //
+    private float currentTime;     //
 	// Use this for initialization
 	void Start () {
-		
-	}
+
+        fRandomTime = Random.Range(0f, 2.5f);
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -35,23 +39,24 @@ public class MoguraController : MonoBehaviour {
     private IEnumerator MoguraUp()
     {
         yield return new WaitForSeconds(fMoveTime);
+        fRandomTime = Random.Range(0f, 2.5f);
         bAppear = true;
-
     }
 
     //もぐら隠れる処理
     private IEnumerator MoguraDown()
     {
         yield return new WaitForSeconds(fMoveTime);
+        fRandomTime = Random.Range(0f, 2.5f);
         bAppear = false;
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
-        {
+        
             Debug.Log("ヒット");
-        }
+        
     }
 
 

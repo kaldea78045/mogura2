@@ -37,6 +37,11 @@ public class PlayerController : MonoBehaviour {
 
         }
 
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(-0.01f,0,0);
+        }
+
     }
 
     private IEnumerator HammerCT(){
