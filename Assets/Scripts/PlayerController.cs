@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 public class PlayerController : MonoBehaviour {
 
-    [SerializeField] GameObject hanmer;
+   // [SerializeField] GameObject hanmer;
     private Animator ha;
 
     private float waitTime = 0.95f;
