@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 public class PlayerController : MonoBehaviour {
 
-   // [SerializeField] GameObject hanmer;
+   
     private Animator ha;
 
     private float waitTime = 0.95f;
@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour {
     void Start() {
         ha = gameObject.GetComponent<Animator>();
     }
-
     // Update is called once per frame
+
     void Update() {
 
       
