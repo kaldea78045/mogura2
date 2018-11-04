@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 1330378965}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -353,10 +353,10 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1330378963}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
-  m_Height: 2
+  m_Height: 2.7
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1330378966
@@ -412,7 +412,6 @@ GameObject:
   - component: {fileID: 1410529883}
   - component: {fileID: 1410529882}
   - component: {fileID: 1410529881}
-  - component: {fileID: 1410529884}
   - component: {fileID: 1410529885}
   m_Layer: 0
   m_Name: mogura (3)
@@ -441,7 +440,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1410529879}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -488,24 +487,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1410529879}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!95 &1410529884
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1410529879}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ae6560166683af24ea06eb48b667e26c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1410529885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,9 +510,10 @@ GameObject:
   - component: {fileID: 1472734661}
   - component: {fileID: 1472734660}
   - component: {fileID: 1472734664}
+  - component: {fileID: 1472734665}
   m_Layer: 0
   m_Name: hanmer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -543,7 +525,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1472734659}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -598,7 +580,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1472734659}
   m_LocalRotation: {x: 0.17744257, y: 0.6389617, z: 0.20141514, w: 0.72088426}
-  m_LocalPosition: {x: 1.754, y: 0.764, z: 0.429}
+  m_LocalPosition: {x: 1.76, y: 0.838, z: 0.567}
   m_LocalScale: {x: 0.0378315, y: 0.10809, z: 0.0378315}
   m_Children:
   - {fileID: 1330378964}
@@ -623,6 +605,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1472734665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1472734659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09911fe818f2f940af832c8b47921e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hanmer: {fileID: 0}
 --- !u!1 &1729645669
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,10 +641,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1729645669}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d09911fe818f2f940af832c8b47921e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 9994d040497a75747a4045cac987a9e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hanmer: {fileID: 1472734659}
 --- !u!4 &1729645671
 Transform:
   m_ObjectHideFlags: 0

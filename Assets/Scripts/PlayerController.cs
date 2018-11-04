@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
     private bool ableAct = true;
     // Use this for initialization
     void Start() {
-        ha = hanmer.GetComponent<Animator>();
+        ha = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame

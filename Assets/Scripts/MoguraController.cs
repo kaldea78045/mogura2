@@ -46,6 +46,13 @@ public class MoguraController : MonoBehaviour {
         bAppear = false;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("ヒット");
+        }
+    }
 
 
 }
