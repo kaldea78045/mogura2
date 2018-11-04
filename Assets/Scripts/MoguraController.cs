@@ -8,11 +8,12 @@ public class MoguraController : MonoBehaviour {
     private bool    bHit        = false;    //もぐらが叩かれた
     private bool    bAppear     = false;    //もぐらが現れてる
     private bool    bAct        = false;    //もぐら行動中
-    private float   fMoveWait   = 0.5f;     //移動時間
-    private float currentWait   = 0.0f;     //移動待ち時間
-    private float moveSpeed     = 0.2f;     //移動速度
-    private float fRandomTime;              //もぐら入出判定時間
-    private float currentTime;              //判定用の時間
+    private float   fMoveWait   = 0.5f;     //移動所要時間
+    private float   currentWait = 0.0f;     //移動待ち時間
+    private float   moveTime    = 0.025f;   //移動時間
+    private float   moveSpeed   = 0.05f;    //移動速度
+    private float   fRandomTime;              //もぐら入出判定時間
+    private float   currentTime;              //判定用の時間
     private Vector3 oldPos;
     private Vector3 nextPos;
 	// Use this for initialization
@@ -58,9 +59,9 @@ public class MoguraController : MonoBehaviour {
         // ループ
         while (currentWait <= fMoveWait)
         {
-            transform.Translate(0, 0.05f, 0);
-            yield return new WaitForSeconds(0.025f);
-            currentWait += 0.025f;
+            transform.Translate(0, moveSpeed, 0);
+            yield return new WaitForSeconds(moveTime);
+            currentWait += moveTime;
         }
         
         fRandomTime = Random.Range(1.5f, 3.5f);
@@ -85,9 +86,9 @@ public class MoguraController : MonoBehaviour {
         Debug.Log("隠れる");
         while (currentWait <= fMoveWait)
         {
-            transform.Translate(0, -0.05f, 0);
-            yield return new WaitForSeconds(0.025f);
-            currentWait += 0.025f;
+            transform.Translate(0, -moveSpeed, 0);
+            yield return new WaitForSeconds(moveTime);
+            currentWait += moveTime;
         }
         //Vector3.Lerp(oldVelocity, velocity, moveSpeed * Time.deltaTime);
         fRandomTime = Random.Range(0.5f, 1.5f);
