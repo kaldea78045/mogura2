@@ -413,6 +413,7 @@ GameObject:
   - component: {fileID: 1410529882}
   - component: {fileID: 1410529881}
   - component: {fileID: 1410529884}
+  - component: {fileID: 1410529885}
   m_Layer: 0
   m_Name: mogura (3)
   m_TagString: Enemy
@@ -427,7 +428,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1410529879}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 3.22, y: 0, z: 0.29}
+  m_LocalPosition: {x: 3.22, y: 0.3, z: 0.29}
   m_LocalScale: {x: 0.9999998, y: 1, z: 0.9999998}
   m_Children: []
   m_Father: {fileID: 1016964108}
@@ -505,6 +506,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1410529885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1410529879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ea6712821951f4428811ede8a859ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1472734659
 GameObject:
   m_ObjectHideFlags: 0
