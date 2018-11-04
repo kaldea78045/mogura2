@@ -27,20 +27,17 @@ public class PlayerController : MonoBehaviour {
 
         }
 
-        if (Input.GetKey("left"))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            //hanmer new Vector3( , 0, 0);
+            gameObject.transform.Translate( 0, 0, -0.02f);
         }
 
-        if (Input.GetKey("right"))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-
+            gameObject.transform.Translate(0, 0, 0.02f);
         }
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(-0.01f,0,0);
-        }
+       
 
     }
 

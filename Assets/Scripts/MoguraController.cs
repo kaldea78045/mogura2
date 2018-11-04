@@ -99,7 +99,7 @@ public class MoguraController : MonoBehaviour {
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
 
         Destroy(gameObject);
