@@ -15,6 +15,18 @@ public class MoguraController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+        //もぐら出現済みの場合
+        if(!bHit && !bAppear)
+        {
+
+        }
+        //もぐら隠れてる状態の場合
+        else if (!bHit && bAppear)
+        {
+
+        }
+
+
 	}
 
 
