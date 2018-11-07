@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class GameStateManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    [SerializeField]GameObject CountText;
+    [SerializeField]GameObject ScoreText;
+    [SerializeField]GameObject TimeText;
+    int countNum;
+    int scoreNum;
+    int timeNum;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -13,4 +20,11 @@ public class GameStateManager : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void InitGame()
+    {
+        countNum = 3;
+        scoreNum = 0;
+        timeNum  = 60;
+    }
 }

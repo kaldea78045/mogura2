@@ -768,6 +768,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9994d040497a75747a4045cac987a9e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CountText: {fileID: 1476494358301272, guid: cd3adc9007d0805479a270c1e0e6933b, type: 2}
+  ScoreText: {fileID: 1608368709473588, guid: 370b99211d439c64fac02d2a1984c65b, type: 2}
+  TimeText: {fileID: 1853178135268362, guid: bfae1770eb03a9d4090d8fbe17173d5d, type: 2}
 --- !u!4 &1729645671
 Transform:
   m_ObjectHideFlags: 0
