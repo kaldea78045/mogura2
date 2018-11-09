@@ -16,12 +16,14 @@ public class MoguraController : MonoBehaviour {
     private float   currentTime;              //判定用の時間
     private Vector3 oldPos;
     private Vector3 nextPos;
+    GameStateManager GSM;
 	// Use this for initialization
 	void Start () {
 
         fRandomTime = Random.Range(1.5f, 3.5f);
         oldPos  = new Vector3(3f,-0.8f,0.3f);
         nextPos = new Vector3(3f, 0.3f, 0.3f);
+        GSM = GameObject.Find("GameManager").GetComponent<GameStateManager>();
 
     }
 	
@@ -101,7 +103,7 @@ public class MoguraController : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
-
+        GSM.SetScore();
         Destroy(gameObject);
         
     }
