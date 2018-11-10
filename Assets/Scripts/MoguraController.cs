@@ -140,6 +140,7 @@ public class MoguraController : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
+        SoundManager.Instance.PlaySE(0);
         GSM.SetScore();
         InitMogura();
     }

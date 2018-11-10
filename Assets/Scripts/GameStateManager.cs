@@ -25,6 +25,7 @@ public class GameStateManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        SoundManager.Instance.PlayBGM(0);
         count = CountText.GetComponent<TextMesh>();
         score = ScoreText.GetComponent<TextMesh>();
         time = TimeText.GetComponent<TextMesh>();
