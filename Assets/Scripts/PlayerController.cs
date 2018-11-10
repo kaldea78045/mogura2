@@ -7,11 +7,13 @@ public class PlayerController : MonoBehaviour {
    
     private Animator ha;
 
-    private float waitTime = 0.95f;
+    private float waitTime = 1f;
     private bool ableAct = true;
+    Vector3 hammerPosition;
     // Use this for initialization
     void Start() {
         ha = gameObject.GetComponent<Animator>();
+        hammerPosition = gameObject.transform.position;
     }
     // Update is called once per frame
 
@@ -21,20 +23,19 @@ public class PlayerController : MonoBehaviour {
         //マウスをクリックしたところにハンマー移動
         if (Input.GetMouseButton(0) && ableAct )
         {
-
             ha.SetTrigger("click");
             StartCoroutine(HammerCT());
 
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (ableAct && Input.GetKey(KeyCode.LeftArrow))
         {
-            gameObject.transform.Translate( 0, 0, -0.02f);
+            gameObject.transform.Translate( 0, 0, -0.05f);
         }
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (ableAct && Input.GetKey(KeyCode.RightArrow))
         {
-            gameObject.transform.Translate(0, 0, 0.02f);
+            gameObject.transform.Translate(0, 0, 0.05f);
         }
 
        

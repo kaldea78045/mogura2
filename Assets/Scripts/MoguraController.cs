@@ -4,47 +4,79 @@ using UnityEngine;
 
 public class MoguraController : MonoBehaviour {
 
-    private Vector3 vPos;                   //もぐらの位置情報
-    private bool    bHit        = false;    //もぐらが叩かれた
+    private Vector3 vInitPos;               //もぐらの初期位置
     private bool    bAppear     = false;    //もぐらが現れてる
     private bool    bAct        = false;    //もぐら行動中
-    private float   fMoveWait   = 0.5f;     //移動所要時間
+    private float   fMoveWait   = 0.25f;    //移動所要時間
     private float   currentWait = 0.0f;     //移動待ち時間
     private float   moveTime    = 0.025f;   //移動時間
     private float   moveSpeed   = 0.05f;    //移動速度
-    private float   fRandomTime;              //もぐら入出判定時間
-    private float   currentTime;              //判定用の時間
-    private Vector3 oldPos;
-    private Vector3 nextPos;
+    private float   fRandomTime;            //もぐら入出判定時間
+    private float   currentTime;            //判定用の時間
+    private float mineTIme;
+    private float maxTIme;
     GameStateManager GSM;
-	// Use this for initialization
-	void Start () {
+    enum STATE
+    {
+        NONE = 0,
+        READY = 1,
+        PLAY = 2,
+        RESULT = 3
+    }
+    // Use this for initialization
+    void Start () {
 
         fRandomTime = Random.Range(1.5f, 3.5f);
-        oldPos  = new Vector3(3f,-0.8f,0.3f);
-        nextPos = new Vector3(3f, 0.3f, 0.3f);
         GSM = GameObject.Find("GameManager").GetComponent<GameStateManager>();
-
+        vInitPos = gameObject.transform.position;
+        
     }
-	
-	// Update is called once per frame
-	void Update () {
-        currentTime += Time.deltaTime;
 
-        //もぐら出現済みの場合
-        if(!bAct && !bHit && bAppear && currentTime >= fRandomTime)
-        {
-            StartCoroutine(MoguraDown());
+    // Update is called once per frame
+    void Update () {
 
-        }
-        //もぐら隠れてる状態の場合
-        else if (!bAct && !bHit && !bAppear && currentTime >= fRandomTime)
+        if ((int)STATE.READY == GSM.GetState())
         {
-            StartCoroutine(MoguraUp());
+           
         }
+        else if ((int)STATE.PLAY == GSM.GetState())
+        {
+
+            currentTime += Time.deltaTime;
+
+            //もぐら出現済みの場合
+            if (!bAct  && bAppear && currentTime >= fRandomTime)
+            {
+                StartCoroutine(MoguraDown());
+
+            }
+            //もぐら隠れてる状態の場合
+            else if (!bAct  && !bAppear && currentTime >= fRandomTime)
+            {
+                StartCoroutine(MoguraUp());
+            }
+        }
+        else if ((int)STATE.RESULT == GSM.GetState())
+        {
+            InitMogura();
+        }
+
+        
+      
+
+        
 
 
 	}
+
+    private void InitMogura()
+    {
+        StopAllCoroutines();
+        gameObject.transform.position  = vInitPos;
+        bAppear = false;
+        bAct    = false;
+        StartCoroutine(RespwanWait());
+    }
 
     //もぐら出現処理
     /*
@@ -61,11 +93,10 @@ public class MoguraController : MonoBehaviour {
         // ループ
         while (currentWait <= fMoveWait)
         {
-            transform.Translate(0, moveSpeed, 0);
+            transform.Translate(0, -moveSpeed, 0);
             yield return new WaitForSeconds(moveTime);
             currentWait += moveTime;
         }
-        
         fRandomTime = Random.Range(1.5f, 3.5f);
         currentWait = 0f;
         currentTime = 0f;
@@ -87,11 +118,12 @@ public class MoguraController : MonoBehaviour {
         bAct = true;
         Debug.Log("隠れる");
         while (currentWait <= fMoveWait)
-        {
-            transform.Translate(0, -moveSpeed, 0);
+        {   transform.Translate(0, moveSpeed, 0);
             yield return new WaitForSeconds(moveTime);
             currentWait += moveTime;
+        
         }
+        gameObject.transform.position = vInitPos;
         //Vector3.Lerp(oldVelocity, velocity, moveSpeed * Time.deltaTime);
         fRandomTime = Random.Range(0.5f, 1.5f);
         currentWait = 0f;
@@ -101,11 +133,15 @@ public class MoguraController : MonoBehaviour {
 
     }
 
+    private IEnumerator RespwanWait()
+    {
+        yield return new WaitForSeconds(1f);
+    }
+
     public void OnTriggerEnter(Collider other)
     {
         GSM.SetScore();
-        Destroy(gameObject);
-        
+        InitMogura();
     }
 
 
